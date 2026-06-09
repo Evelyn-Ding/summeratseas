@@ -1,5 +1,5 @@
 # Research Log for Summer@SEAS 2026 Project
-₍^. ̫.^₎⟆ ⋆˚🐾˖°
+₍^. ̫.^₎⟆ 
 
 **Project:** Medical Speech Project
 
@@ -9,7 +9,7 @@
 
 **PhD student:** Yu-Wen Chen
 
-
+⋆˚🐾˖°
 ## Overview
 
 <!-- 2-3 sentences describing the project goals -->
