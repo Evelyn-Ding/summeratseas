@@ -1,9 +1,13 @@
 # Research Log for Summer@SEAS 2026 Project :)
 
 **Project:** Medical Speech Project
+
 **Researcher:** Evelyn Ding
+
 **PI:** Dr. Julia Hirschberg
+
 **PhD student:** Yu-Wen Chen
+
 
 ## Overview
 
