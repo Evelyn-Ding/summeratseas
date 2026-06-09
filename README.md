@@ -1,4 +1,5 @@
-# Research Log for Summer@SEAS 2026 Project :)
+# Research Log for Summer@SEAS 2026 Project
+₍^. ̫.^₎⟆ ⋆˚🐾˖°
 
 **Project:** Medical Speech Project
 
