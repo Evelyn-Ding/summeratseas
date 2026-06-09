@@ -1,9 +1,13 @@
-# Research Log
+# Research Log for Summer@SEAS 2026 Project :)
 
-**Project:** <!-- project name -->  
-**Researcher:** <!-- your name -->  
-**Duration:** 8 weeks (6/8 – 8/2)  
-**Advisor/PI:** <!-- advisor name, if applicable -->
+**Project:** Medical Speech Project
+
+**Researcher:** Evelyn Ding
+
+**PI:** Dr. Julia Hirschberg
+
+**PhD student:** Yu-Wen Chen
+
 
 ## Overview
 
