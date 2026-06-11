@@ -1,4 +1,4 @@
-# Research Log for Summer@SEAS 2026 Project :)
+# Research Log for Summer@SEAS 2026 Project
 
 **Project:** Medical Speech Project
 
@@ -7,7 +7,6 @@
 **PI:** Dr. Julia Hirschberg
 
 **PhD student:** Yu-Wen Chen
-
 
 ## Overview
 
