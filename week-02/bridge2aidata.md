@@ -35,13 +35,14 @@ features
 
 ## GeMAPS Overlap
 
-GeMAPS (Geneva Minimalistic Acoustic Parameter Set, Eyben et al. 2015) defines **62 parameters** across:
+GeMAPS (Geneva Minimalistic Acoustic Parameter Set, Eyben et al. 2015) defines **18 Low-level Descriptors (LLD)** — the raw frame-level measurements:
 - **Frequency**: Pitch (F0), Jitter, Formants 1–3 frequency + bandwidth
 - **Energy/Amplitude**: Shimmer, Loudness, HNR (Harmonics-to-Noise Ratio)
 - **Spectral**: Alpha Ratio, Hammarberg Index, Spectral Slope (0–500 Hz, 500–1500 Hz), Formant relative energies, H1–H2, H1–A3
-- **Temporal**: Rate of loudness peaks, mean/SD of voiced/unvoiced region lengths, voiced regions per second
 
-eGeMAPS extends to **88 parameters**, adding MFCC 1–4, Spectral Flux, and Formant 2–3 bandwidths.
+These 18 LLD are then summarized over time using **functionals** (mean, coefficient of variation, percentiles, rising/falling slopes, etc.), plus 6 temporal features (loudness peaks/sec, voiced/unvoiced segment stats), yielding **62 total parameters**.
+
+eGeMAPS adds **7 more LLD** (MFCC 1–4, Spectral Flux, Formant 2–3 bandwidths) for **25 LLD** total, and **88 total parameters** after functionals.
 
 | File | What it is | GeMAPS overlap? | Notes |
 |---|---|---|---|
