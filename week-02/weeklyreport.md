@@ -22,8 +22,8 @@
 - I spent time on the research project description for the Bridge2AI forms. My [draft](https://docs.google.com/document/d/1xehvai0ZYgLnObimR-gl5rFZ1AvwvIVjh7qNh_dXwwU/edit?tab=t.0) ended up being about 650 words.
 - I met with Parmida about the proposal draft. We identified two main directions we could take this project:  (1) build a framework that maps disorders to acoustic features (useful as an evaluation benchmark for other models) for a wide variety of disorders (broaden the scope), or (2) build a new interpretable diagnostic model for specific disorders where acoustic features seem particularly relevant (narrow the scope).
 - What kind of acoustic features to look at?
-1. Voice Quality (VQ) labels — categorical labels (pitch, texture, volume, clarity, rhythm) to describe voice, kind of like personality descriptors (e.g. soft, singsong, nasally).
-2. 2. Acoustic features — quantifiable signal properties, standard GeMAPS features (e.g. jitter, shimmer); extractable via openSMILE or Praat software.
+  1. Voice Quality (VQ) labels — categorical labels (pitch, texture, volume, clarity, rhythm) to describe voice, kind of like personality descriptors (e.g. soft, singsong, nasally).
+  2. Acoustic features — quantifiable signal properties, standard GeMAPS features (e.g. jitter, shimmer); extractable via openSMILE or Praat software.
 -   key issue of model interpretability (open architecture with weights, stress testing black-box model) - the model isn't actually "interpretable"
 
 ## Friday, 6/19
