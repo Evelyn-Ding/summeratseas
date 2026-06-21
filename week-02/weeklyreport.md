@@ -15,16 +15,25 @@
 - We could pivot to looking at diseases that change how a person speaks (e.g., Parkinson's, Alzheimer's/dementia, dysarthria). For now, the goal is to find a dataset with raw audio and clear clinical labels (Bridge2AI, DAIC-WOZ), and narrow down on which disorders to explore afterward.
 
 ## Wednesday, 6/17
+- I downloaded the forms for requesting data for the Bridge2AI [adult dataset](https://physionet.org/content/b2ai-voice/3.1.0/) and [pediatric dataset](https://physionet.org/content/b2ai-voice-pediatric/1.1.0/). I successfully submitted a request to access the data with extracted features. However, to access the raw audio, I need to submit a separate application that requires signed forms and a research project description! I am tracking the status of my application in this [file](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/bridge2aidata.md).
+- I scoured all 10+ datasets surveyed in the [Briganti depression voice quality paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-01/voicequality_biomarker_depression.pdf) and realized that all of them are basically private (e.g. [Mazur 2025](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/mazur2025evaluation.pdf).
+
 ## Thursday, 6/18
+- I spent time on the research project description for the Bridge2AI forms. My [draft](https://docs.google.com/document/d/1xehvai0ZYgLnObimR-gl5rFZ1AvwvIVjh7qNh_dXwwU/edit?tab=t.0) ended up being about 650 words.
+- I met with Parmida about the proposal draft. We identified two main directions we could take this project:  (1) build a framework that maps disorders to acoustic features (useful as an evaluation benchmark for other models) for a wide variety of disorders (broaden the scope), or (2) build a new interpretable diagnostic model for specific disorders where acoustic features seem particularly relevant (narrow the scope).
+- What kind of acoustic features to look at?
+-   1. Voice Quality (VQ) labels — categorical labels (pitch, texture, volume, clarity, rhythm) to describe voice, kind of like personality descriptors (e.g. soft, singsong, nasally).
+    2. Acoustic features — quantifiable signal properties, standard GeMAPS features (e.g. jitter, shimmer); extractable via openSMILE or Praat software.
+-   key issue of model interpretability (open architecture with weights, stress testing black-box model) - the model isn't actually "interpretable"
 
 ## Friday, 6/19
-
+- I learned more about model interpretability, which I think is an important concept for me to understand going forward. The papers I read are (Rudin 2019 black box)[https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/rudin2019blackbox.pdf], (Kerz 2023 explainable AI in mental health)[https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/kerz2023explainableAImentalhealth.pdf], and (Ebraheem 2025 interpretable AI for voice/speech)[https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/ebraheem2025iexplainableAIvoice_bridge2a.pdf] (same authors of Bridge2AI dataset!).
+- I finished a draft of the Bridge2AI application and also got approved for the DAIC-Woz dataset!
 ---
 
 ## Week Summary
 
 **What I did:**
-- I got approved for the DAIC-Woz dataset!
 - Bridge2AI application
 
 **Questions:**
@@ -33,4 +42,45 @@
 - 
 
 **Plan for next week:**
-- I will revise the application for the Bridge2AI-Voice dataset (for both adult and pediatric)
+- Based on Yu-Wen's feedback, I will revise the application for the Bridge2AI-Voice dataset (for both adult and pediatric)
+- I got approved for the DAIC-Woz dataset! so i can start looking into it :)
+
+diagram i like: 
+Interpretability-accuracy tradeoff:
+
+More interpretable                        More accurate
+─────────────────────────────────────────────────────▶
+Linear       Decision    Random     SVM     Deep
+regression   tree        forest             neural network
+
+This is the bias-variance tradeoff:
+
+High bias                          High variance
+(underfitting)                     (overfitting)
+─────────────────────────────────────────────────▶
+
+Linear model    Random Forest    Deep neural net
+
+Too simple to    Balanced         Flexible enough
+capture real                      to memorize
+patterns                          training noise
+
+Inherently interpretable          (transparent by design):           
+
+Decision tree                     
+Linear/logistic regression        
+Linear model on GeMAPS features                      
+
+Reasoning IS the model           Always faithful                   
+Post-hoc explainability
+(approximating after the fact):
+LIME — local linear approximation
+SHAP — feature contribution scores
+Gradient saliency — input sensitivity
+Probing — what does layer X encode?
+
+Reasoning APPROXIMATES the model
+Never perfectly faithful
+
+
+
