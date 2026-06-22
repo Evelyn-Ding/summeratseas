@@ -13,6 +13,7 @@
 ---
 
 ## Feature Files
+(Taken from the [README.md](https://physionet.org/content/b2ai-voice/3.1.0/README.md))
 
 ```
 features
@@ -103,3 +104,103 @@ These are additional features present in static_features that are NOT part of Ge
 ## Summary
 
 The Bridge2AI dataset provides a very rich hand-crafted feature set. `static_features` alone covers the entire eGeMAPS standard plus Praat-based jitter/shimmer variants, speech timing features, spectral shape descriptors, and CPP — all of which are interpretable and clinically grounded. The SPARC and torchaudio files provide frame-level versions of a subset of these same features, useful if temporal dynamics (not just summary statistics) are needed.
+
+---
+
+## More info about what's included in the dataset:
+Other files and folders:
+```
+phenotype
+├── confounders
+│   ├── confounders.json
+│   └── confounders.tsv
+├── demographics
+│   ├── demographics.json
+│   └── demographics.tsv
+├── diagnosis
+│   ├── airway_stenosis.json
+│   ├── airway_stenosis.tsv
+│   ├── amyotrophic_lateral_sclerosis.json
+│   ├── amyotrophic_lateral_sclerosis.tsv
+│   ├── anxiety.json
+│   ├── anxiety.tsv
+│   ├── benign_lesions.json
+│   ├── benign_lesions.tsv
+│   ├── bipolar_disorder.json
+│   ├── bipolar_disorder.tsv
+│   ├── cognitive_impairment.json
+│   ├── cognitive_impairment.tsv
+│   ├── control.json
+│   ├── control.tsv
+│   ├── copd_and_asthma.json
+│   ├── copd_and_asthma.tsv
+│   ├── depression.json
+│   ├── depression.tsv
+│   ├── glottic_insufficiency.json
+│   ├── glottic_insufficiency.tsv
+│   ├── laryngeal_cancer.json
+│   ├── laryngeal_cancer.tsv
+│   ├── laryngeal_dystonia.json
+│   ├── laryngeal_dystonia.tsv
+│   ├── laryngitis.json
+│   ├── laryngitis.tsv
+│   ├── muscle_tension_dysphonia.json
+│   ├── muscle_tension_dysphonia.tsv
+│   ├── parkinsons_disease.json
+│   ├── parkinsons_disease.tsv
+│   ├── precancerous_lesions.json
+│   ├── precancerous_lesions.tsv
+│   ├── unexplained_chronic_cough.json
+│   ├── unexplained_chronic_cough.tsv
+│   ├── unilateral_vocal_fold_paralysis.json
+│   └── unilateral_vocal_fold_paralysis.tsv
+├── enrollment
+│   ├── eligibility.json
+│   ├── eligibility.tsv
+│   ├── enrollment_form.json
+│   ├── enrollment_form.tsv
+│   ├── participant.json
+│   └── participant.tsv
+├── questionnaire
+│   ├── adhd_adult.json
+│   ├── adhd_adult.tsv
+│   ├── custom_affect_scale.json
+│   ├── custom_affect_scale.tsv
+│   ├── dsm5_adult.json
+│   ├── dsm5_adult.tsv
+│   ├── dyspnea_index.json
+│   ├── dyspnea_index.tsv
+│   ├── gad7_anxiety.json
+│   ├── gad7_anxiety.tsv
+│   ├── leicester_cough_questionnaire.json
+│   ├── leicester_cough_questionnaire.tsv
+│   ├── panas.json
+│   ├── panas.tsv
+│   ├── phq9.json
+│   ├── phq9.tsv
+│   ├── productive_vocabulary.json
+│   ├── productive_vocabulary.tsv
+│   ├── psychiatric_history.json
+│   ├── psychiatric_history.tsv
+│   ├── ptsd_adult.json
+│   ├── ptsd_adult.tsv
+│   ├── vhi10.json
+│   ├── vhi10.tsv
+│   ├── voice_perception.json
+│   └── voice_perception.tsv
+└── task
+    ├── acoustic_task.json
+    ├── acoustic_task.tsv
+    ├── harvard_sentences.json
+    ├── harvard_sentences.tsv
+    ├── random_item_generation.json
+    ├── random_item_generation.tsv
+    ├── recording.json
+    ├── recording.tsv
+    ├── session.json
+    ├── session.tsv
+    ├── stroop.json
+    ├── stroop.tsv
+    ├── winograd.json
+    └── winograd.tsv
+```
