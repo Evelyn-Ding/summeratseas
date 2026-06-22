@@ -8,7 +8,9 @@ More interpretable                        More accurate
 Linear       Decision    Random     SVM     Deep
 regression   tree        forest             neural network
 
-This is the bias-variance tradeoff:
+
+
+Bias-variance tradeoff:
 
 High bias                          High variance
 (underfitting)                     (overfitting)
