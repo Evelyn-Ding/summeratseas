@@ -4,7 +4,7 @@
 
 ## Monday, 6/22
 - I wanted to deepen my understanding on what model interpretability meant, so I watched an MIT Opencourseware video on [Interpretability in ML for Healthcare](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-03/MIT%20Opencourseware%20-%20ML%20for%20Healthcare%20-%20Interpretability.pdf). This was really informative on how even if you ask the model to continually justify its reasoning, it might not give you a faithful answer; this is where techniques like LIME come in. It's also hard to generalize your results from training on clean data to the real world.
-- The tradeoff between accuracy and complexity of models is worth exploring. Usually more complex models are less interpretable. Interestingly enough, models that have high accuracies sometimes are looking at nonsense features, while models looking at the "right" features (aligned with human knowledge) may end up performing worse.
+- The tradeoff between accuracy and complexity of models is worth exploring. Usually more complex models are less interpretable. Interestingly enough, models that have high accuracy sometimes are looking at nonsense features, while models looking at the "right" features (aligned with human knowledge) may end up performing worse.
 - The difference between training a model from scratch and fine-tuning a model is that the former starts with randomly initialized weights that you train on massive datasets to obtain a generalist model, and the latter requires optimizing pre-trained weights using a small dataset and specialized use case.
 
 ## Tuesday, 6/23
@@ -26,9 +26,9 @@ Word2Vec ──► LSTM ┼   (transformers kinda helped with both of these adva
                   └─► Generating text: GPT-1 ──► GPT-2 ──► GPT-3 (Encoders)
                       (by predicting the next word/token in the sequence)
 ```
-- The ARNI project delves into the concept of interpretability in four main ways: (1) integrated gradients and SHAP (2) masking to verify predictions (3) linear probing by layer (4) k-means clustering and CPA. I can take inspiration from their project by using some of these techniques to achieve interpretability in the models that I train; .
+- The ARNI project delves into the concept of interpretability in four main ways: (1) integrated gradients and SHAP (2) masking to verify predictions (3) linear probing by layer (4) k-means clustering and CPA. I can take inspiration from their project by using some of these techniques to achieve interpretability in the models that I train.
 - My project differs from the ARNI project in the modality of the data. While ARNI uses text-based data (e.g. Reddit datasets) to analyze patterns in language, I'm looking for raw audio data (e.g. speech recordings) that I'll extract acoustic features from. Thus, instead of using psycholinguistic features from [Linguistic Inquiry and Word Count (LIWC)](https://www.liwc.app/help/howitworks), I'm looking at features from the [Geneva Minimalistic Acoustic Parameter Set (GeMAPS)](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/gemapsconvention_acousticfeatures.pdf). Then, similarly to the ARNI project, I will compare the results of training the models on these human-influenced features with model-learned features and try to make conclusions about the interpretability of the models.
-- 
+
 ## Friday, 6/26
 - I attended the first ARNI meeting and got to hear about what everyone was working on :)
 - I extracted acoustic features using the openSMILE toolkit! I followed the [tutorial](https://audeering.github.io/opensmile/get-started.html#obtaining-and-installing-opensmile) to install openSMILE, learn how to use and set up configs, extract features to a csv file, install gnuplot, and visualize data using gnuplot.
@@ -39,13 +39,13 @@ Word2Vec ──► LSTM ┼   (transformers kinda helped with both of these adva
 ## Week Summary
 
 **What I did:**
-- I worked on obtaining data for Bridge2AI-Voice pediatric and adult datasets, and I successfully downloaded the data for the TORGO dataset. I also got access to DAIC-WOZ, DI-Hard, and Librimix!
+- I worked on obtaining data for Bridge2AI-Voice pediatric and adult datasets, and I successfully downloaded the data for the TORGO dataset. I also got access to DAIC-WOZ, DI-HARD, and Librimix!
 - Now that I have access to the audio data, I have started learning how to use the openSMILE toolkit to extract features and generate useful plots. I was able to extract eGeMAPS features for audio files in the TORGO dataset. I am also working on training speech classifiers to perform binary prediction and severity assessments for the speakers based on these extracted features.
 
 **Questions:**
-- Who should I list on recipients for the Bridge2AI-Voice dataset? (Everyone on the list must digitally signed for the form.)
+- Who should I list on recipients for the Bridge2AI-Voice dataset? (Everyone on the list must digitally sign the form.)
 - Which speech classifiers have a more "interpretable" design - are all of them interpretable as long as I'm using a feature-based approach? How do I choose the optimal model to train?
 - Do I shift away from looking at Voice Quality (VQ) labels and toward GeMAPS features, or try to keep both directions?
 
 **Plan for next week:**
-- I can train (more complex) black box models, then use techniques like LIME and SHAP to probe the models to achieve post-hoc interpretability. I also want to compare the perfomrance of the GeMAPS (human-crafted) features approach to the SSL embeddings  (which are machine-generated) approach, allowing me to explore the trade-off between accuracy and interpretability.
+- I can train (more complex) black box models, then use techniques like LIME and SHAP to probe the models to achieve post-hoc interpretability. I also want to compare the performance of the GeMAPS (human-crafted) features approach to the SSL embeddings  (which are machine-generated) approach, allowing me to explore the trade-off between accuracy and interpretability.
