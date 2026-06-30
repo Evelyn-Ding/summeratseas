@@ -2,11 +2,11 @@ import os
 import subprocess
 import pandas as pd
 import glob
-import tempfile
 
 SMILEXTRACT = "/Users/evelyn/Downloads/opensmile-3.0.2-macos-armv8/bin/SMILExtract"
 CONFIG = "/Users/evelyn/Downloads/opensmile-3.0.2-macos-armv8/config/egemaps/v02/eGeMAPSv02.conf"
 WAV_DIR = "/Users/evelyn/Documents/claudecode/speechlab/TORGO/torgo-processed-wav/"
+OUTPUT_DIR = "/Users/evelyn/Documents/claudecode/speechlab/week-04/torgo_csvs/"
 SUMMARY_CSV = "/Users/evelyn/Documents/claudecode/speechlab/week-04/torgo_egemaps_summary.csv"
 
 # Step 4: extract speaker ID from filename and add label
@@ -21,27 +21,23 @@ def get_label(name):
 # Step 1: get all wav files
 wav_files = glob.glob(os.path.join(WAV_DIR, "*.wav"))
 
-# Step 2: run SMILExtract on each file, collect results in memory (no individual CSVs saved)
-all_dfs = []
+# Step 2: run SMILExtract on each file and save individual CSVs
 for wav_file in wav_files:
     filename = os.path.basename(wav_file)
-    # use a temp file so we don't clutter the output folder
-    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as tmp:
-        tmp_path = tmp.name
+    output_csv = os.path.join(OUTPUT_DIR, filename.replace(".wav", ".csv"))
     subprocess.run(
         [SMILEXTRACT, "-C", CONFIG, "-I", wav_file,
-         "-csvoutput", tmp_path,
+         "-csvoutput", output_csv,
          "-instname", filename,   # pass filename so name column is not 'unknown'
          "-appendcsv", "0"],      # overwrite instead of append to avoid duplicate rows
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL
     )
-    if os.path.exists(tmp_path):
-        df = pd.read_csv(tmp_path, sep=";")
-        all_dfs.append(df)
-        os.remove(tmp_path)
 
-# Step 3: concatenate all results into one dataframe
+# Step 3: load and concatenate all CSVs into one dataframe
+all_dfs = []
+for csv_file in glob.glob(os.path.join(OUTPUT_DIR, "*.csv")):
+    df = pd.read_csv(csv_file, sep=";")
+    all_dfs.append(df)
+
 combined_df = pd.concat(all_dfs, ignore_index=True)
 
 # Step 4: add label column
