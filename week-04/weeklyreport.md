@@ -33,6 +33,7 @@
 - learn about + try implementing SHAP and LIME!!!
 - Read about [SHAP](https://shap.readthedocs.io/en/latest/) and [LIME](https://interpret.ml/docs/lime.html) from the API documentations
 
+arni meeting -> i shared what i was working on!
   
 ---
 
