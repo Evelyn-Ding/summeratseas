@@ -3,15 +3,28 @@
 ---
 
 ## Monday, 6/29
-- After getting familiar with how to use the [openSMILE toolkit](https://audeering.github.io/opensmile/get-started.html#obtaining-and-installing-opensmile), I was ready to start extracting features! Last week, I followed the documentation to extract features like energy and chroma. For this project, the most relevant features belong to the set of 88 features called [eGeMAPS](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/gemapsconvention_acousticfeatures.pdf). I wrote a [script](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/extract_egemaps_features_all.py) that cycles through all 8,000+ audio files inside the TORGO dataset and runs the egemaps/v02/eGeMAPSv02.conf config from openSMILE, successfully generating a csv for each file that contains the extracted eGeMAPS features. Then, I compiled the csvs into the [torgo egemaps summary csv](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_egemaps_summary.csv).
+- After getting familiar with how to use the [openSMILE toolkit](https://audeering.github.io/opensmile/get-started.html#obtaining-and-installing-opensmile), I was ready to start extracting features! Last week, I followed the documentation to extract features like energy and chroma. For this project, the most relevant features belong to the set of 88 features called [eGeMAPS](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-02/gemapsconvention_acousticfeatures.pdf). I wrote a [script](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/extract_egemaps_features_all.py) that cycles through all 8,000+ audio files inside the TORGO dataset and runs the egemaps/v02/eGeMAPSv02.conf config from openSMILE, successfully generating a csv for each file that contains the extracted eGeMAPS features.
+- I compiled the csvs into the [torgo egemaps summary csv](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_egemaps_summary.csv). The csv has around 8,000 rows (representing audio files) and 88 columns (reprenting eGeMAPS features).
+
 ## Tuesday, 6/30
+- visualizations
+- install jupyter matplotlib seaborn scikit-learn
+- https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb
+- explain steps 1, 2, and 3
 
 ## Wednesday, 7/1
-
+- b2ai proposal
+- hand-crafted features vs SSL embeddings 
 ## Thursday, 7/2
-
+- ldc access; new datasets found!
 ## Friday, 7/3
+- TORGO
+- listen to audio
+- explore features more!
+- train a simple speech classifier!!
+- learn about + try implementing SHAP and LIME!!!
 
+  
 ---
 
 ## Week Summary
