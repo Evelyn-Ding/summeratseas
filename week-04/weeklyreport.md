@@ -26,27 +26,27 @@
   - *Other conditions:* TalkBank, Speech Accessibility Project, Zenodo.
 - I got approved for access to the Linguistic Data Consortium (LDC)! After browsing through some datasets, I also looked through recent papers published by members of the LDC. I have linked some interesting papers I read from a researcher who has done a lot of work on training ML models to analyze acoustic features through tools like [OpenSMILE and Praat](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/Opensmile_Praat_Librosa_Comparison_Schizophrenia.pdf) and detect disorders like [Schizophrenia](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/Prosody_schizophrenia.pdf) or [Alzheimer's Disease / dementia](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/Acoustic_features_Alzheimers_Disease.pdf). They even combined [speech data with text-based approaches](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/Combining_acoustic_and_linguistic_features_for_AD_Dementia.pdf).
 ## Friday, 7/3
-- TORGO
-- listen to audio
-- explore features more! -> PCA
-- train a simple speech classifier!! -> RF, performance accuracy & feature importance ranking
-- learn about + try implementing SHAP and LIME!!!
-- Read about [SHAP](https://shap.readthedocs.io/en/latest/) and [LIME](https://interpret.ml/docs/lime.html) from the API documentations
+- I attended the ARNI meeting and got to share what I was working on!
+- I am learning a lot by exploring how to apply various feature extraction and machine learning techniques to the TORGO dataset.
+  -  First, I listened to some audio files and noticed patterns in people with dysarthria versus people who are in the control group.
+  - Then, I explored features using Principal Component Analysis (PCA), which effectively compresses all 88 eGeMAPS features into 2 numbers that capture the variance in the data. Through this visualization, you can actually see and judge whether or not distinct clusters form for dysarthic versus control group patients!
+  - Finally, I trained a simple speech classifier to perform classification of dysarthria. I chose Random Forest because it is an interpretable feature-based model, and the algorithm allows you to rank the features by importance in terms of their significance in the final predictions.
+- All of my results are explained [here](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb).
 
-arni meeting -> i shared what i was working on!
-  
 ---
 
 ## Week Summary
 
 **What I did:**
-- Reminder: What is in the TORGO dataset? -> What kind of data was collected? (read here: https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/TORGO%20Webpage%20Info.pdf)
-Torgo is a vocal disorder dataset (dysarthria) — distinct from the mental health datasets explored so far. It includes ~8,000 audio files plus tongue movement data (not being used for now). Total size was under 1GB.
+- I explored the [TORGO dataset](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/TORGO%20Webpage%20Info.pdf), which contains data for dysarthria (a vocal disorder). It includes 8,000+ audio files plus tongue movement data (not being used for now), with total size under 1GB.
+- After extracting acoustic features from the data, I created visualizations to interpret these features, such as histograms and PCA graphs. Then, I trained the Random Forest classifier to predict dysarthria with 99% accuracy! In addition, I performed analysis on feature importance rankings, which may shed light on which features are the most important indicators of dysarthria in a quantifiable way. 
+- I found new datasets we could look into, including conditions like Alzheimer's, Parkinson's, and more. I have downloaded data for MDVR-KCL and requested access to NeuroVoz. I also got access to the LDC and read some papers from their authors.
+- For the Bridge2AI-Voice dataset, we are now in the stage of waiting on signatures and approval!
 
 **Questions:**
-- text
+- My model initially reached 99% accuracy, although this number may be skewed high due to data leakage (i.e. the model is teaching itself a shortcut of what the speakers *with dysarthria* sound like, rather than what dysarthria sounds like). As Yu-Wen suggested, I will split the training and test data so that speakers are isolated. I am curious to see how that affects the accuracy!
 
 **Plan for next week:**
-- text
+- Read about [SHAP](https://shap.readthedocs.io/en/latest/) and [LIME](https://interpret.ml/docs/lime.html) from the API documentations. I will practice implementing them on the TORGO dataset. Once I have a solid grasp of these techniques, I will be able to apply them to future work on the Bridge2AI-Voice and other datasets.
 
 
