@@ -24,7 +24,3 @@
 | [Week 6](week-06/weeklyreport.md) | 7/13–7/19 |
 | [Week 7](week-07/weeklyreport.md) | 7/20–7/26 |
 | [Week 8](week-08/weeklyreport.md) | 7/27–8/2 |
-
-## Resources
-
-See [resources.md](resources.md) for papers, links, and references.
