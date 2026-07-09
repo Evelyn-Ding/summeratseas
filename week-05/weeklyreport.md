@@ -12,7 +12,7 @@
 - After training the Random Forest with the fixed train/test split, the model had a 73% accuracy rate. This lower accuracy rate is a more honest reflection of the model's performance. While the accuracy decreased, it's important to fix the data leakage issue because we want the model to be actually learning the signs of dysarthria without taking shortcuts; it should be able to generalize to new voices it hasn't heard before, which is what a real clinical tool would need to do.
 
 ## Tuesday, 7/7
-- For Tuesday's group meeting, I prepared these [slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Meeting%20%235_%20July%207%2C%202026.pdf) summarizing my work on the TORGO dataset, as well as information on the SHAP vs LIME techniques and a summary of the 3 datasets I downloaded with Parkinson's data (as we await signatures on the Bridge2AI dataset application).
+- For Tuesday's group meeting, I prepared these [slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Meeting%20%235_%20July%207%2C%202026.pdf) summarizing my work on the TORGO dataset, as well as information on the SHAP vs LIME techniques and a summary of the 3 datasets I downloaded with Parkinson's data (as we await signatures on the Bridge2AI dataset application). I would like to make meeting slides every week!
 - parmida slides -> Voice Quality 1:1 mapping idea
 ## Wednesday, 7/8
 - Summer@SEAS Meeting on Innovation, Design, & Entrepreneurship (IDE)
