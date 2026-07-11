@@ -34,7 +34,7 @@
 ## Wednesday, 7/8
 - Summer@SEAS Meeting on Innovation, Design, & Entrepreneurship (IDE)
 - The Columbia Engineering social media reached out, asking me to share my summer research experience, so I filled out the form for that!
-- To build off my work on the TORGO dataset, Dr. Hirschberg suggested that I look into TORGO's severity annotations. Severity-based classification is a good next step after my work on binary classification (dysarthria vs control). I realized that the name of the audio files encode information about the speaker's gender (M-F) and their recording session (01-05), but their severity levels are determined separately in a process where a speech-language pathologist administered the Frenchay Dysarthria Assessment, as described in this paper [2022 paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Baseline%20Dysarthria%20deep%20learning%20paper.pdf).
+- To build off my work on the TORGO dataset, Dr. Hirschberg suggested that I look into TORGO's severity annotations. Severity-based classification is a good next step after my work on binary classification (dysarthria vs control). I realized that the name of the audio files encode information about the speaker's gender (M-F) and their order of recruitment (01-05), but their severity levels are determined separately in a process where a speech-language pathologist administered the Frenchay Dysarthria Assessment, as described in this paper [2022 paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Baseline%20Dysarthria%20deep%20learning%20paper.pdf).
 ```
 severity_level = {
     "F03": 1,
@@ -55,7 +55,15 @@ After reading papers on TORGO classification, I noticed that many of them either
 - I attended the ARNI Meeting! 
 - Read paper about applicability of SHAP / LIME for audio data
 - SHAP libraries didn't work oop - try again to see per-prediction feature importances ?
-
+SHAP assigns each feature an importance value for a particular prediction
+LIME explains the predictions of any classifier in an interpretable and faithful manner, by learning an interpretable
+model locally around the prediction
+Yes, these techniques can directly perturb the audio data
+(1)
+(2)
+(3)
+Problems -> Fixed by  mllm-shap 
+SLIME pinpoints the time or time-frequency region that contributes most to a decision
 ---
 
 ## Week Summary
