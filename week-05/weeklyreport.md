@@ -50,10 +50,11 @@ severity_level = {
 ```
 After reading papers on TORGO classification, I noticed that many of them either use deep learning to generate [uninterpretable features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Dysarthria%20classification%20using%20deep%20learning%20DSSCNet.pdf). One [paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Dysarthria%20binary%20and%20severity%20level%20classification%20using%20feature%20extraction.pdf) that uses hand-crafted features chose a set of 8 features (e.g. MFCCs, CQT, Chromagrams) that are distinct from the 88 eGeMAPs features I was training my model on. 
 ## Thursday, 7/9
-- look into datasets (NEW)
+- We heard back from the Columbia Sponsored Projects Administration (SPA) on the Bridge2AI application. They noted that since the dataset contains Personally Identifiable Information, the process of getting a signature for our DTUA may now require involvement from the IRB. To ensure that we move through the process as quickly as possible, we focused on faciliating our conversation with the SPA team about the necessary next steps. 
 ## Friday, 7/10
-SHAP libraries didn't work oop - try again to see per-prediction feature importances ?
+- I attended the ARNI Meeting! 
 - Read paper about applicability of SHAP / LIME for audio data
+- SHAP libraries didn't work oop - try again to see per-prediction feature importances ?
 
 ---
 
@@ -66,4 +67,5 @@ SHAP libraries didn't work oop - try again to see per-prediction feature importa
 - 
 
 **Plan for next week:**
-- 
+- look into datasets (NEW)
+
