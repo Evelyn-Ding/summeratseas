@@ -53,17 +53,13 @@ After reading papers on TORGO classification, I noticed that many of them either
 - We heard back from the Columbia Sponsored Projects Administration (SPA) on the Bridge2AI application. They noted that since the dataset contains Personally Identifiable Information, the process of getting a signature for our DTUA may now require involvement from the IRB. To ensure that we move through the process as quickly as possible, we focused on faciliating our conversation with the SPA team about the necessary next steps. 
 ## Friday, 7/10
 - I attended the ARNI Meeting! 
-- Read paper about applicability of SHAP / LIME for audio data
-- SHAP libraries didn't work oop - try again to see per-prediction feature importances ?
-SHAP assigns each feature an importance value for a particular prediction
-LIME explains the predictions of any classifier in an interpretable and faithful manner, by learning an interpretable
-model locally around the prediction
-Yes, these techniques can directly perturb the audio data
-(1)
-(2)
-(3)
-Problems -> Fixed by  mllm-shap 
-SLIME pinpoints the time or time-frequency region that contributes most to a decision
+- I looked into whether SHAP and LIME can be applied to raw audio data, the way it's applied to text or feature-based data.
+    - According to the [SHAP paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/SHAP%20Paper%202017.pdf), SHAP assigns each feature an importance value for a particular prediction. This can be aggregated over all predictions to get a global importance of the features.
+    - According to the [LIME paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/LIME%20Paper%202016.pdf), LIME explains the predictions of any classifier in an interpretable and faithful manner, by learning an interpretable model locally around the prediction. It does so by first perturbing the area around an input and measuring the distance of the output from the original instance, and it works on a single prediction at a time.
+- I learned that these techniques *can* directly perturb the audio data. For example, this [paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Sound%20LIME%20interpertability%20for%20audio%20music.pdf) applies LIME to music audio, called Sound LIME (SLIME), directly perturbing the raw signal in different ways: masking specific frequency bands in spectrogram representations (spectral / time-frequency), or altering short time chunks in raw audio waveforms (temporal). There is also a technique of semantic segmentation used in [audioLIME](https://github.com/CPJKU/audioLIME).
+- However, there are some issues that come with directly manipulating the audio data, which the [mllm-shap](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/mllm%20shap.pdf) paper proposes ways to fix.
+- Interpretability is achieved when SLIME is able to pinpoint the time or time-frequency region that contributes most to a decision.
+
 ---
 
 ## Week Summary
