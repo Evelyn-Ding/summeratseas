@@ -61,11 +61,13 @@ After reading papers on TORGO classification, I noticed that many of them either
 ## Week Summary
 
 **What I did:**
-- 
+- TORGO dataset -> continue explore - adjusting accuracies; looked into severity annotations
+- B2AI forms and signatures
+- LIME vs SHAP readings
 
 **Questions:**
-- 
+- severity annotations ?
 
 **Plan for next week:**
-- look into datasets (NEW)
+- look into datasets (NEW) - 3 and listen carefully
 
