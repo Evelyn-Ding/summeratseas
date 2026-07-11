@@ -61,13 +61,14 @@ After reading papers on TORGO classification, I noticed that many of them either
 ## Week Summary
 
 **What I did:**
-- TORGO dataset -> continue explore - adjusting accuracies; looked into severity annotations
-- B2AI forms and signatures
-- LIME vs SHAP readings
+- This week, I continued exploring the TORGO dataset. After training a Random Forest classifier to perform binary classification on the TORGO dataset (dysarthria), I fixed the issue of data leakage by ensuring that the same speaker did not appear in both the train and test set, which led to a lower accuracy value. I also looked into severity annotations and read several papers that perform severity-level classification in addition to binary classification.
+- I learned about LIME vs SHAP, which are two techniques for achieving post-hoc interpretability for black box models. I also read papers on whether these techniques would be feasible for audio (speech) inputs, and tried implementing them into my TORGO dataset analysis.
+- We made progress on the Bridge2AI dataset application, contacting people to try to obtain the signatures we need to submit our forms!
 
 **Questions:**
-- severity annotations ?
+- As the direction of my project evolves, how can I ensure that the project is headed on the right path (not toward an oversaturated area of research)? Training speech models to find vocal biomarkers and perform classification of health disorders already seems like a popular research topic. Perhaps I could focus on the interpretability of models (hand-crafted features vs SSL embeddings), or examine the generalizability of models by emphasizing my use of cross-corpus, multi-language datasets. The role of voice in detecting Parkinson's (across different languages!) is a really interesting area that other [Columbia researchers](https://www.tc.columbia.edu/spplab/#tab-10895952) are working on, so we could potentially collaborate or build on their work!
 
 **Plan for next week:**
-- look into datasets (NEW) - 3 and listen carefully
+- I want to take a more in-depth look into the three Parkinson's speech datasets I found: Saarbrücken Voice Database (SVD) — German; NeuroVoz — Castillian Spanish; Mobile Device Voice Recordings at King's College London (MDVR-KCL) — English. Since I have these datasets downloaded locally, I plan on copying them over to the speechlab server!
+- In particular, I will listen for the quality of the raw audio data and think about what kinds of speech signals and features we could potentially extract (or which features are already provided in the dataset, if any).
 
