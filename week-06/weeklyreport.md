@@ -15,9 +15,16 @@
 - I listed these in order of least to most interpretable. The idea is that with the concept bottleneck framework, you have high-level concepts that are very understandable by humans. You come up with a list of these concepts, plug them into the model prompt, and force the model to predict scores each of these concepts that influence its final decision. The concept bottleneck framework, when combined with ALM, goes one step beyond the approach in the original [concept bottleneck framework paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/concept%20bottleneck%20models.pdf). By using adaptable concepts rather than predefined concept sets, the ALM adds much more flexibility. You still have to decide which concepts matter, but you can simply update the prompt to reflect a new set of concepts, without having to change any underlying architecture (like the number of neurons in certain layers).
 
 ## Wednesday, 7/15
-- listen to audio files, summarize content, and copy over datasets to speechlab serveer (~70k)
+- Summer@SEAS Meeting on Graduate Career Placement.
+- To explore the three Parkinson's datasets I have access to, I listened to the audio files and made notes on the quality of the data and potential speech signals we could extract:
+  - Saarbrücken Voice Database (SVD) — German: Each patient has two folders, They’re asked to read pre-determined sentences and also all of the German vowels (a,i, aiu, u), Need to convert .nsp into .wav files to listen to them
+  - NeuroVoz — Castillian Spanish: Completely in Spanish, People reading standard set of short phrases or producing certain sounds , Name of the audio file generally describes the sound being produced (e.g. PD_SOMBRA_0067), Most of the audio files are very clear and there’s no interference from moderator’s speech, However, some audio files are very quiet (audio volume varies) and are short in length (<5 sec) 
+  - Mobile Device Voice Recordings at King's College London (MDVR-KCL) — English: Good audio quality, no noise, Some stretches of silence / ambient noise, Before the speech starts & in between segments, there is brief confirmation of “can you hear me?” between moderator and the speaker, For Spontaneous Dialogue, speaker is prompted into making conversation but you can kind of hear the moderator (although very faint, sound is like through headphones), I can sometimes difference between speakers with PD and HC speakers
+- I copied over all the data, which is downloaded locally on my computer, onto speechlab server under ```/proj/speech/corpora``` (~25,000 files total).
 ## Thursday, 7/16
 - MATLAB -> idea to train a simple speech classifier with a click of a button !
+- I also summarized the metadata for each dataset in my slides.
+- [Week 6 slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Meeting%20%236_%20July%2016%2C%202026.pdf).
 ## Friday, 7/17
 - discuss ARNI project
 - huntington's (hyper vs hypo) (hypo- prefix indicating that the speech is slower and quieter in nature)
@@ -39,13 +46,15 @@
 
 **Plan for next week:**
 - i have a lot of ideas!!
-  - train simple speech classifier
+  - train simple speech classifier 
 3 ideas in parallel now:
 (1) keep working on TORGO - b/c directly relevant to PD
-- severity based scores vs binary classification
+- severity based scores vs binary classification https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Dysarthria%20severity%20analysis%20in%20PD.pdf
 - SHAP vs LIME
 (2) ARNI [mentalbert paper] - interpretability -> same methodlogy but applied to speech instead of text: feature extraction (eGeMAPS instead of LIWCS), SHAP, k-means clustering
 (3) 
 START WORKING ON DATASET (spanish → identify spontaneous speech OR english spontaneous speech → clean it first using voice activity detection models)
-
+dif methods of feature extraction
+- opensmile
+- neurospeech? https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Neurospeech%20feature%20extractor.pdf
 *start IRB application process for Bridge2AI-Voice dataset
