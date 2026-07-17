@@ -22,9 +22,8 @@
   - Mobile Device Voice Recordings at King's College London (MDVR-KCL) — English: Good audio quality, no noise, Some stretches of silence / ambient noise, Before the speech starts & in between segments, there is brief confirmation of “can you hear me?” between moderator and the speaker, For Spontaneous Dialogue, speaker is prompted into making conversation but you can kind of hear the moderator (although very faint, sound is like through headphones), I can sometimes difference between speakers with PD and HC speakers
 - I copied over all the data, which is downloaded locally on my computer, onto speechlab server under ```/proj/speech/corpora``` (~25,000 files total).
 ## Thursday, 7/16
-- MATLAB -> idea to train a simple speech classifier with a click of a button !
-- I also summarized the metadata for each dataset in my slides.
-- [Week 6 slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Meeting%20%236_%20July%2016%2C%202026.pdf).
+- MATLAB: AI Signals Workshop. I attended this workshop to learn about machine learning techniques and using MATLAB to preprocess data, train predictive models, and integrate with systems. Recently, I have been working on training simple speech classifiers, and I think MATLAB is really useful for this because you can train several classifiers and easily compare their results. There's a feature where you can switch between classifiers with the click of a button, which I want to try when I start training classifiers on my PD datasets.
+- We also had our group meeting and I presented my [Week 6 slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Meeting%20%236_%20July%2016%2C%202026.pdf), where I summarized the metadata for each dataset, updated my project direction with the concept bottleneck framework, and discussed the Bridge2AI application.
 ## Friday, 7/17
 - discuss ARNI project
 - huntington's (hyper vs hypo) (hypo- prefix indicating that the speech is slower and quieter in nature)
