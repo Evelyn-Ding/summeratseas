@@ -3,7 +3,7 @@
 ---
 
 ## Monday, 7/6
-- I performed addition analysis to the TORGO (dysarthria) dataset, adding my code and findings to [Jupyter Notebook](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb). Last week, after extracting the eGeMAPS features from the TORGO dataset and visualizing the feature distributions, I trained a Random Forest model to perform binary classification of samples as dysarthria or control.
+- I performed additional analysis on the TORGO (dysarthria) dataset, adding my code and findings to [Jupyter Notebook](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb). Last week, after extracting the eGeMAPS features from the TORGO dataset and visualizing the feature distributions, I trained a Random Forest model to perform binary classification of samples as dysarthria or control.
 - While the model achieved a 99% accuracy, this number was inflated due to the issue of data leakage — the model learned to recognize the *speaker*, not *dysarthria*. Originally, the data was randomly split 80% / 20% without regard for speaker, which meant the train AND test datasets would contain samples from the same speaker. To fix this, I split the training and testing data by speaker. To ensure that the train and test sets are severity balanced and gender balanced, I selected these to be my 4 test speakers: F03, M02 (dysarthric) + FC03, MC02 (control). Train speakers: all remaining 11 speakers.
 ```
 - Dysarthric (8): F01, F03, F04, M01, M02, M03, M04, M05 (8 total: 3 female, 5 male)
@@ -13,7 +13,7 @@
 
 ## Tuesday, 7/7
 - For Tuesday's group meeting, I prepared these [slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Meeting%20%235_%20July%207%2C%202026.pdf) summarizing my work on the TORGO dataset, as well as information on the SHAP vs LIME techniques and a summary of the 3 datasets I downloaded with Parkinson's data (as we await signatures on the Bridge2AI dataset application).
-- In a previous meeting, Parmida and I had discussed the connection between her work on voice quality labels (e.g. loud, authoritative, singsong) and my research on acoustic features (e.g. jitter, shimmer, harmonics to noise ratio). While the voice quality labels are more qualititative descriptors, the acoustic features—which can be extracted using tools like the openSMILE toolkit—are more quantitative in nature. Her idea is to map certain qualitative VQ labels onto more quantitative acoustic features, guided by clinical literature.
+- In a previous meeting, Parmida and I had discussed the connection between her work on voice quality labels (e.g. loud, authoritative, singsong) and my research on acoustic features (e.g. jitter, shimmer, harmonics to noise ratio). While the voice quality labels are more qualitative descriptors, the acoustic features—which can be extracted using tools like the openSMILE toolkit—are more quantitative in nature. Her idea is to map certain qualitative VQ labels onto more quantitative acoustic features, guided by clinical literature.
 ```
 ┌────────────┬──────────────────────────────┐
 │   Label    │  Acoustic Correlate (Cited)  │
@@ -48,22 +48,17 @@ severity_level = {
 }
 // control group has severity level of 0
 ```
-After reading papers on TORGO classification, I noticed that many of them either use deep learning to generate [uninterpretable features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Dysarthria%20classification%20using%20deep%20learning%20DSSCNet.pdf). One [paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Dysarthria%20binary%20and%20severity%20level%20classification%20using%20feature%20extraction.pdf) that uses hand-crafted features chose a set of 8 features (e.g. MFCCs, CQT, Chromagrams) that are distinct from the 88 eGeMAPs features I was training my model on. 
+- After reading papers on TORGO classification, I noticed that many of them either use deep learning to generate [uninterpretable features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Dysarthria%20classification%20using%20deep%20learning%20DSSCNet.pdf). One [paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Dysarthria%20binary%20and%20severity%20level%20classification%20using%20feature%20extraction.pdf) that uses hand-crafted features chose a set of 8 features (e.g. MFCCs, CQT, Chromagrams) that are distinct from the 88 eGeMAPs features I was training my model on. 
 ## Thursday, 7/9
-- We heard back from the Columbia Sponsored Projects Administration (SPA) on the Bridge2AI application. They noted that since the dataset contains Personally Identifiable Information, the process of getting a signature for our DTUA may now require involvement from the IRB. To ensure that we move through the process as quickly as possible, we focused on faciliating our conversation with the SPA team about the necessary next steps. 
+- We heard back from the Columbia Sponsored Projects Administration (SPA) on the Bridge2AI application. They noted that since the dataset contains Personally Identifiable Information, the process of getting a signature for our DTUA may now require involvement from the IRB. To ensure that we move through the process as quickly as possible, we focused on facilitating our conversation with the SPA team about the necessary next steps. 
 ## Friday, 7/10
 - I attended the ARNI Meeting! 
-- Read paper about applicability of SHAP / LIME for audio data
-- SHAP libraries didn't work oop - try again to see per-prediction feature importances ?
-SHAP assigns each feature an importance value for a particular prediction
-LIME explains the predictions of any classifier in an interpretable and faithful manner, by learning an interpretable
-model locally around the prediction
-Yes, these techniques can directly perturb the audio data
-(1)
-(2)
-(3)
-Problems -> Fixed by  mllm-shap 
-SLIME pinpoints the time or time-frequency region that contributes most to a decision
+- I looked into whether SHAP and LIME can be applied to raw audio data, the way it's applied to text or feature-based data.
+    - According to the [SHAP paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/SHAP%20Paper%202017.pdf), SHAP assigns each feature an importance value for a particular prediction. This can be aggregated over all predictions to get a global importance of the features.
+    - According to the [LIME paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/LIME%20Paper%202016.pdf), LIME explains the predictions of any classifier in an interpretable and faithful manner, by learning an interpretable model locally around the prediction. It does so by first perturbing the area around an input and measuring the distance of the output from the original instance, and it works on a single prediction at a time.
+- I learned that these techniques *can* directly perturb the audio data. For example, this [paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/Sound%20LIME%20interpertability%20for%20audio%20music.pdf) applies LIME to music audio, called Sound LIME (SLIME), directly perturbing the raw signal in different ways: masking specific frequency bands in spectrogram representations (spectral / time-frequency), or altering short time chunks in raw audio waveforms (temporal). There is also a technique of semantic segmentation used in [audioLIME](https://github.com/CPJKU/audioLIME). Interpretability is achieved when SLIME is able to pinpoint the time or time-frequency region that contributes most to a decision.
+- However, when it comes to directly perturbing audio data, there are some issues that come up—which the [mllm-shap](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-05/mllm%20shap.pdf) paper proposes ways to fix.
+
 ---
 
 ## Week Summary
