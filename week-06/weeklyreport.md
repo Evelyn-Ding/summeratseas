@@ -25,8 +25,10 @@
 - MATLAB: AI Signals Workshop. I attended this workshop to learn about machine learning techniques and using MATLAB to preprocess data, train predictive models, and integrate with systems. Recently, I have been working on training simple speech classifiers, and I think MATLAB is really useful for this because you can train several classifiers and easily compare their results. There's a feature where you can switch between classifiers with the click of a button, which I want to try when I start training classifiers on my PD datasets.
 - We also had our group meeting and I presented my [Week 6 slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Meeting%20%236_%20July%2016%2C%202026.pdf), where I summarized the metadata for each dataset, updated my project direction with the concept bottleneck framework, and discussed the Bridge2AI application.
 ## Friday, 7/17
-- discuss ARNI project
-- huntington's (hyper vs hypo) (hypo- prefix indicating that the speech is slower and quieter in nature)
+- I went to the ARNI project meeting and had a one-on-one call with Sara, where we had some great discussion on research ideas!
+- mentalbert - projects in parallel (text vs speech), focus on using same techniques/methodologies, mental health scope
+- huntington's (hyper vs hypo) (hypo- prefix indicating that the speech is slower and quieter in nature) - read & annotate report
+- annotations for chengtao dai's project
 ---
 
 ## Week Summary
@@ -44,15 +46,15 @@
 - how would b2ai dataset come in - how is it related to huntington's disease
 
 **Plan for next week:**
-- i have a lot of ideas!!
-  - train simple speech classifier 
+- i have a lot of ideas!! explore my 3 PD datasets
+  - train simple speech classifier -> Jupyter notebook vs MATLAB !!
 3 ideas in parallel now:
 (1) keep working on TORGO - b/c directly relevant to PD
 - severity based scores vs binary classification https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Dysarthria%20severity%20analysis%20in%20PD.pdf
 - SHAP vs LIME
-(2) ARNI [mentalbert paper] - interpretability -> same methodlogy but applied to speech instead of text: feature extraction (eGeMAPS instead of LIWCS), SHAP, k-means clustering
-(3) 
-START WORKING ON DATASET (spanish → identify spontaneous speech OR english spontaneous speech → clean it first using voice activity detection models)
+(2) ARNI [mentalbert paper] - interpretability -> same methodlogy but applied to speech instead of text: feature extraction (eGeMAPS instead of LIWCS), SHAP, k-means clustering - work on the same (multimodal) dataset or a speech dataset (for depression tho; focus on mental health disorders in scope)?
+
+(3) START WORKING ON DATASET (spanish → identify spontaneous speech OR english spontaneous speech → clean it first using voice activity detection models)
 dif methods of feature extraction
 - opensmile
 - neurospeech? https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Neurospeech%20feature%20extractor.pdf
