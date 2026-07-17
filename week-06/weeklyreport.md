@@ -3,7 +3,10 @@
 ---
 
 ## Monday, 7/13
-- IRB process
+- I emailed the IRB, requesting a consultation for our Bridge2AI-Voice Dataset application. The IRB replied that a protocol needs to be submitted for IRB review. I will start the IRB process, completing the training and filling out forms through the Rascal platform.
+- After obtaining access to three Parkinson's datasets (SVD, Neurovoz, MVDR-KCL), I am currently focusing on Parkinson's detection using vocal biomarkers. To understand what kind of research has been done in this area, I read several papers by the same author:
+  - In particular, the paper on [Parkinson's disease detection from speech across three languages (Spanish, German, Czech)](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/Parkinsons_across_three_languages.pdf) really stood out to me. I also happen to be exploring three PD datasets in different languages (German, Spanish, English), although my datasets differ from theirs. Specifically, they used datasets in [Spanish](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/PD_Spanish_Dataset.pdf), [German](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/PD_German_Dataset.pdf), and [Czech](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/PD_Czech_Dataset.pdf) that are not publicly accessible (except for the Spanish one, which is called PC-GITA). The same questions of cross-language generalizability are present in both of our research though.
+  - I also found an interesting link between dysarthria and Parkinson's disease from reading [this paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/PD%20and%20Dysarthria%20Link.pdf), which explains that PD causes extreme slowness of movement that affects a patient's vocal tract and thus speech. The paper states that "The main symptoms of the impaired speech of PD patients include reduced loudness, monopitch, monoloudness, hypotonicity, breathy, hoarse voice quality, and imprecise articulation. These symptoms are typically grouped and called *hypokinetic dysarthria*." This helps connect my previous work on exploring the TORGO (dysarthria) dataset to my current focus on PD, as my analysis on which features are important to detecting dysarthria and the techniques I used to extract those features can be cross-applied.
 ## Tuesday, 7/14
 - read yu-wen's paper
 - low level features
@@ -13,7 +16,8 @@
 ## Thursday, 7/16
 - MATLAB -> idea to train a simple speech classifier with a click of a button !
 ## Friday, 7/17
-- discuss ARNI project 
+- discuss ARNI project
+- huntington's (hyper vs hypo) (hypo- prefix indicating that the speech is slower and quieter in nature)
 ---
 
 ## Week Summary
