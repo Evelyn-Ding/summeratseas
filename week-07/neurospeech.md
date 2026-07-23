@@ -1,4 +1,4 @@
-Here's the table reorganized around DisVoice's six official modules, with NeuroSpeech's matching (or missing) coverage next to each:
+[DisVoice](https://github.com/jcvasquezc/disvoice) (python package) vs [NeuroSpeech](https://github.com/jcvasquezc/NeuroSpeech) (paper -> toolkit):
 
 | DisVoice module             | DisVoice features                                                                                                                           | NeuroSpeech equivalent (per paper)                                                                                                                                     |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
