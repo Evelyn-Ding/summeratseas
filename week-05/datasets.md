@@ -42,6 +42,8 @@ MDVP stands for **Multi-Dimensional Voice Program** — a standardized clinical 
 
 Jitter and shimmer capture micro-instabilities in vocal fold vibration; HNR and GNE capture breathiness/noise. All four are elevated in pathological voices (PD, dysarthria, vocal cord disorders).
 
+SEE FULL UNABRIDGED TABLE HERE: https://www.nature.com/articles/s41597-024-04186-z/tables/5
+
 ## Appendix: Saarbrücken Voice Database (SVD) Pathology Term Translations (German → English)
 
 | German | English |
