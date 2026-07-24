@@ -33,7 +33,7 @@
 
 ## Friday, 7/24
 
-- look into the parmida's slides -> VQ analysis
+- look into the parmida's [slides](https://docs.google.com/presentation/d/1oyXigbFfhRBsFg8MrF26cupQdxAif-MA/edit?rtpof=true) -> VQ analysis
   ```
    this is the voxprofile model
    https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality
@@ -57,4 +57,4 @@
 **Plan for next week:**
 
 
-- thai's rec'd paper -> SHAP
+- thai's rec'd paper [attention is all you need](https://arxiv.org/pdf/1703.01365) -> SHAP try to fix dependencies and properly implement it; look for multimodal dataset and update arni group next wk
