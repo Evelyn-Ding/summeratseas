@@ -41,6 +41,7 @@
    parmida should be familiar with it
    maybe you can collaborate with her seeing what features from this model are more accurate or helpful?
   ```
+- meeting w/thai - interpretability (SHAP); ML (RF) vs DL (bert, mentalbert, llama -> encoder/decoder ?)
 - IRB trainings -> document the training process -> finish by wknd
 ---
 
@@ -53,7 +54,9 @@
 - annotations project report
 
 **Questions:**
-- 
+- how does one train a concept bottleneck fw, or an ssl embeddings model?
+- how to train multiple dif (ML) classifiers in one jupyter notebook - compare "benchmark" accuracies?
+- voice activity detection model on the english dataset ?
 
 **Plan for next week:**
 
