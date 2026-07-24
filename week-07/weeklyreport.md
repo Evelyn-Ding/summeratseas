@@ -19,6 +19,7 @@
 ## Tuesday, 7/21
 - Meeting
 - IRB review process - set up account on rascal platform, category 4 exemption, required personnel + trainings
+- another meeting with chengtao dai on annotations !
 
 ## Wednesday, 7/22
 - Summer@SEAS Final Meeting / Social Event
