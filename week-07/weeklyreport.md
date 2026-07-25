@@ -34,8 +34,8 @@
 ## Friday, 7/24
 
 - I looked into the Parmida's [slides](https://docs.google.com/presentation/d/1oyXigbFfhRBsFg8MrF26cupQdxAif-MA/edit?rtpof=true) on voice quality labels from the VoxProfile benchmark. My goal is identify which VQ features are the most helpful. The underlying VoxProfile model can be found at: https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality. Then, I believe I can directly prompt the ALM on the most useful VQ features, which fall into 5 categories: ```pitch, rhythm, clarity, voice texture, volume```.
-- meeting w/thai - interpretability (SHAP); ML (RF) vs DL (bert, mentalbert, llama -> encoder/decoder ?)
-- IRB trainings -> document the training process -> finish by wknd
+- I attended the weekly ARNI meeting. We discussed the mentalBERT project, and how the scope is focused on text-based Reddit (social media) datasets for depression, with potential for expanding the scope to blog posts and clinical interviews and even other modalities + mental health disorders.
+- I also had a one-on-one meeting with Thai from the ARNI group to discuss the mentalBERT project, which focuses on text-based mental health analysis—with strong parallels to my speech-based analysis. We talked about the project's focus on interpretability (via methods like SHAP) as well as the differences between Machine Learning (e.g. Random Forest) and Deep Learning (e.g. BERT, Llama) approaches. I plan on reading more about encoder/decoder models to understand the model architectures used in the mentalBERT project!
 ---
 
 ## Week Summary
@@ -49,16 +49,14 @@
   - (2) NeuroSpeech / DisVoice: https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurospeech_disvoice.md
   - (3) MDVP: https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_mdvp_features.ipynb
 - After performing analysis on all three feature sets, I saw that eGeMAPS was the most successful approach. Perhaps it's because there are a larger number of features, or the specific features are better at capturing the voice quality of PD.
-- (ARNI) papers read:
-- huntington's disease
-- annotations project report
+- I read the following papers from the ARNI group: [Huntington's Disease vocal biomarkers](https://arxiv.org/pdf/2603.11168v1) (since PD results in hypokinetic dysarthria and HD results in hyperkinetic dysarthria, it could be interesting to explore contrastive learning approach that assumes the features for the two classes are opposites!); Chengtao's project report on LLM-as-a-judge for PsychEval Dialogues.
 
 **Questions:**
-- how does one train a concept bottleneck fw, or an ssl embeddings model?
-- how to train multiple dif (ML) classifiers in one jupyter notebook - compare "benchmark" accuracies?
-- voice activity detection model on the english dataset ?
+- What are the steps for implementing a concept bottleneck framework, or an SSL embeddings model?
+- If I train multiple different (ML) classifiers in one Jupyter Notebook, can I directly compare "benchmark" accuracies?
+- For the MDVR-KCL English dataset, how can I train a voice activity detection model to trim silence + denoise?
 
 **Plan for next week:**
 - Now that I've trained classifiers on three standard feature sets, the next step is to try implementing the concept bottleneck framework. This will generate features that are super interpretable, baked directly into the prompt to the ALM ([Flamingo-Audio from HuggingFace](https://huggingface.co/nvidia/audio-flamingo-next-think-hf), fine tuned on Clinical Voice Quality (CVQ) dimensions). I'll also try implementing an SSL-based model, which generates abstract, uninterpretable features that may result in a higher accuracy. This method will use a feature extraction approach built on VoxProfile (which produces 25 voice quality labels), using the [Whisper large v3 VQ model](https://huggingface.co/openai/whisper-large-v3) as the backbone.
-- IRB training
-- thai's rec'd paper [attention is all you need](https://arxiv.org/pdf/1703.01365) -> SHAP try to fix dependencies and properly implement it; look for multimodal dataset and update arni group next wk
+- For the ARNI project, Thai recommended that I read the paper [Attention is all you need](https://arxiv.org/pdf/1703.01365) to better understand encoder/decoder models (& classification heads). I'm also eager to learn more about the architectures like BERT, HuBERT (BERT fine-tuned for Automatic Speech Recognition), Transformers, RNNs. I can also work on properly implementing SHAP, which will require me to try fixing dependencies. Finally, I'll look for multimodal dataset on mental health disorders that offers both text and speech data.
+- I am working on the IRB trainings: TC0019 - HIPAA: Health Insurance Portability Accountability Act Research Training Course; TC0087 - Human Subjects Protection Training (includes Minors and FDA where applicable). I'll document the training process as I complete them.
