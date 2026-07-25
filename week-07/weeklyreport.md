@@ -19,12 +19,12 @@
   - I was wondering: if Parkinson's causes a form of dysarthria, and loudness is the most important feature for the TORGO (dysarthria) dataset, then why loudness isn't a very important feature for Parkinson's? This could be because the patients in TORGO had dysarthria caused by cerebral palsy, ALS, or even Huntington's disease, which manifests differently than the kind of hypokinetic dysarthria that Parkinson's causes. Or it could simply be due to the microphone settings for the Neurovoz dataset!
 
 ## Tuesday, 7/21
-- Meeting
-- IRB review process - set up account on rascal platform, category 4 exemption, required personnel + trainings
-- another meeting with chengtao dai on annotations !
+- We had our weekly meeting, where I presented my [Week 7 slides](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/Meeting%20%237_%20July%2021%2C%202026.pdf).
+- For the IRB review process, I set up an account on the Rascal platform and began filling out the forms. I emailed the IRB team to help clarify my questions about category 4 exemption and required trainings for listed personnel.
+- I also had a meeting with Chengtao from the ARNI group on the project for mental health dialogue scoring using LLMs. We discussed the manual annotation part of the project, which I will be helping with!
 
 ## Wednesday, 7/22
-- Summer@SEAS Final Meeting / Social Event
+- Summer@SEAS Meeting — End of Summer Celebration
 - (2) Neurospeech / disvoice set of features - read up a lot about the toolkit vs library and their differences
   - reading the neurospeech [paper]() and the disvoice [github](https://github.com/jcvasquezc/disvoice) which also has a lot of its own useful read.me's for each feature type -> wrote this [summary of comparisons btwn the two](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurospeech.md)
 - *still working on resolving dependencies -> thursday
@@ -61,6 +61,6 @@
 - voice activity detection model on the english dataset ?
 
 **Plan for next week:**
-
+- concept bottleneck fw
 
 - thai's rec'd paper [attention is all you need](https://arxiv.org/pdf/1703.01365) -> SHAP try to fix dependencies and properly implement it; look for multimodal dataset and update arni group next wk
