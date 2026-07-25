@@ -25,10 +25,9 @@
 
 ## Wednesday, 7/22
 - Summer@SEAS Meeting — End of Summer Celebration
-- (2) Neurospeech / disvoice set of features - read up a lot about the toolkit vs library and their differences
-  - reading the neurospeech [paper]() and the disvoice [github](https://github.com/jcvasquezc/disvoice) which also has a lot of its own useful read.me's for each feature type -> wrote this [summary of comparisons btwn the two](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurospeech.md)
-- *still working on resolving dependencies -> thursday
-
+- I got to work on feature extraction approach (2) [Neurospeech toolkit](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/Neurospeech%20paper%20full%20print.pdf) / [DisVoice library](https://github.com/jcvasquezc/disvoice).
+  - I realized that Neurospeech was built for Windows computers (I have a Mac). The good news is that the creator of Neurospeech also released a Python library called DisVoice. What's great is that DisVoice has an even larger feature set than Neurospeech (even though it's missing a couple cool features), with a feature extraction pipeline built for machine learning! I summarized the differences between the two softwares [here](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurospeech.md).
+- After installing the Python library, I got stuck on resolving dependency conflicts. Once I am able to get the extracted features for Neurospeech/DisVoice, I'll work on performing the same analysis I did earlier with the eGeMAPS features.
 
 ## Thursday, 7/23
 - (3) [MDVP set of features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_mdvp_features.ipynb)
