@@ -14,6 +14,7 @@
     2. check the shape and print out rows + cols, verify this against what is expected
     3. visualize feature distributions using histograms, pca graphs
     4. train a random forest model, plot confusion matrix and feature importances (top 20 features)
+    *bonus: generate feature distribution histograms for top 4 most important features
 ```
 - In my [analysis on Neurovoz with eGeMAPS features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_features.ipynb), I found that the most important features are related to the rate and rhythm of speech (e.g. mean unvoiced segment length, voiced segment length, voiced segments per second). This makes sense, since Parkinson's patients are known to speak slower, especially in monologue settings where they don't have a script to read off of.
   - I was wondering: if Parkinson's causes a form of dysarthria, and loudness is the most important feature for the TORGO (dysarthria) dataset, then why loudness isn't a very important feature for Parkinson's? This could be because the patients in TORGO had dysarthria caused by cerebral palsy, ALS, or even Huntington's disease, which manifests differently than the kind of hypokinetic dysarthria that Parkinson's causes. Or it could simply be due to the microphone settings for the Neurovoz dataset!
@@ -30,8 +31,8 @@
 - After installing the Python library, I got stuck on resolving dependency conflicts. Once I am able to get the extracted features for Neurospeech/DisVoice, I'll work on performing the same analysis I did earlier with the eGeMAPS features.
 
 ## Thursday, 7/23
-- (3) [MDVP set of features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_mdvp_features.ipynb)
-- *additionally, i added the same speaker leakage problem i did for torgo. i also generated 4 most important features' histograms as well like i did for the egemaps feature set.
+- The final set of features I wanted to explore was (3) [MDVP (Multidimensional Voice Program)](https://pubmed.ncbi.nlm.nih.gov/15952683/). This set of features have already been extracted and are directly provided in the Neurovoz dataset in the ```audio_features``` folder; MDVP features are also native to the SVD (German) dataset, which stores its data in .nsp files. Thus, I thought it would be useful to compare the performance of using MDVP features!
+- After performing the same [analysis](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_mdvp_features.ipynb) that I did for the other feature sets, I found that the most important features were related to tremor frequency. Then I did the additional step of solving the speaker leakage problem, which I first dealt with when I was working with the TORGO dataset (due to its very limited number of speakers). This lowered the accuracy from around 70% to 55%.
 
 ## Friday, 7/24
 
