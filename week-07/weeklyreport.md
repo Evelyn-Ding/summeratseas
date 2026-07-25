@@ -3,18 +3,19 @@
 ---
 
 ## Monday, 7/20
-- *similar pipeline/workflow to [TORGO jupyter notebook](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb)
-
+- My goal this week was to fully explore the Parkinson's datasets! After last week's meeting, where we listened to a few audio files from each of the three datasets, we agreed that I should start with the Neurovoz dataset (Spanish).
+  - Despite each audio recording being pretty short in length, Neurovoz had the cleanest data and the largest sample size; the MDVR-KCL (English) dataset had noise (i.e. conversations between the moderator and speaker) and the SVD (German) dataset only had data for 1 Parkinson's patient. 
+  - When I start working with the MDVR-KCL data, I'll have to remove the noise in the data pre-processing stage, which may a bit involved. While the SVD dataset is too small for a train set, it could be a good way to verify our results on a test sample.
+- The first step was feature extraction. I had a couple ideas last week for which set of features to extract: ```(1) eGeMAPS (2) NeuroSpeech (3) MDVP (Multidimensional Voice Program)```
+- I started with (1) the eGeMAPS features, so I wrote a [script](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/extract_egemaps_features_free.py) that generates a csv for each audio file that contains the values for all 88 eGeMAPS features, stored in this [folder](https://github.com/Evelyn-Ding/summeratseas/tree/main/week-07/neurovoz_free_csvs). There's only 76 files total, whereas TORGO had 8,000+ files (so I had to .gitignore the folder)! After all the audio files have been processed, a [summary csv](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_summary.csv) is generated, containing the values of extracted features for all the audio files.
+- To perform analysis on the Neurovoz dataset, I followed a similar approach to my [TORGO analysis](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb), where I wrote code in Jupyter Notebook to do the following:
+```
   1. display first few cols of csv
-  2. check the shape and print out rows + cols, verify this against what you expected
-  3. visualize feature distributions, pca
-  4. train a random forest model and plot confusion matrix, and the top 20 features
-
-- feature extraction (1) eGeMAPS features - required separate [script](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/extract_egemaps_features_free.py), run separately in the terminal to generate:
-  - summary csv [here](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_summary.csv)
-  - extracted features (corr to each audio, makes up an entire folder) [here](https://github.com/Evelyn-Ding/summeratseas/tree/main/week-07/neurovoz_free_csvs) - this time I COULD put them in the github repo instead of hiding in gitignore (like for TORGO) bc only 76 of them total -> 76 rows (df.shape[0] or len returns # of rows w/o counting title) 
-- -> egemaps -> train RF classifier -> results analysis [neurovoz_free_egemaps_features.ipynb](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_features.ipynb).
-- *insert write up on analysis on results* 
+  2. check the shape and print out rows + cols, verify this against what is expected
+  3. visualize feature distributions using histograms, pca graphs
+  4. train a random forest model, plot confusion matrix and feature importances (top 20 features)
+```
+- In my [analysis on Neurovoz with eGeMAPS features](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_features.ipynb), I found that the most important features are related to the rate and rhythm of speech (e.g. mean unvoiced segment length, voiced segment length, voiced segments per second). This makes sense, since Parkinson's patients are known to speak slower, especially in monologue settings where they don't have a script to read off of. I was wondering: if Parkinson's causes a form of dysarthria, and loudness is the most important feature for the TORGO (dysarthria) dataset, then why loudness isn't a very important feature for Parkinson's? This could be because the patients in TORGO had dysarthria caused by cerebral palsy, ALS, or even Huntington's disease, which manifests differently than the kind of hypokinetic dysarthria that Parkinson's causes. Or it could simply be due to the microphone settings for the Neurovoz dataset!
 
 ## Tuesday, 7/21
 - Meeting
