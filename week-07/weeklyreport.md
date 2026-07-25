@@ -3,11 +3,8 @@
 ---
 
 ## Monday, 7/20
-- My goal this week was to fully explore the Parkinson's datasets! After last week's meeting, where we listened to a few audio files from each of the three datasets, we agreed that I should start with the Neurovoz dataset (Spanish).
-  - Despite each audio recording being pretty short in length, Neurovoz had the cleanest data and the largest sample size; the MDVR-KCL (English) dataset had noise (i.e. conversations between the moderator and speaker) and the SVD (German) dataset only had data for 1 Parkinson's patient. 
-  - When I start working with the MDVR-KCL data, I'll have to remove the noise in the data pre-processing stage, which may a bit involved. While the SVD dataset is too small for a train set, it could be a good way to verify our results on a test sample.
-- The first step was feature extraction. I had a couple ideas last week for which set of features to extract: ```(1) eGeMAPS (2) NeuroSpeech (3) MDVP (Multidimensional Voice Program)```. The reason why I want to try extracting feature sets is that I plan on comparing the accuracies of the various approaches!
-  - I started with (1) the eGeMAPS features, so I wrote a [script](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/extract_egemaps_features_free.py) that generates a csv for each audio file that contains the values for all 88 eGeMAPS features, stored in this [folder](https://github.com/Evelyn-Ding/summeratseas/tree/main/week-07/neurovoz_free_csvs). There's only 76 files total, whereas TORGO had 8,000+ files (so I had to .gitignore the folder)! After all the audio files have been processed, a [summary csv](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_summary.csv) is generated, containing the values of extracted features for all the audio files.
+- Out of the three Parkinson's Disease (PD) datasets, I chose to start with the Neurovoz dataset because it had the cleanest audio and largest sample sizes. The first step of my analysis was feature extraction. There were a couple options for which features to extract: ```(1) eGeMAPS (2) NeuroSpeech (3) MDVP (Multidimensional Voice Program)```.
+- I started with (1) the eGeMAPS features, so I wrote a [script](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/extract_egemaps_features_free.py) that generates a csv for each audio file that contains the values for all 88 eGeMAPS features, stored in this [folder](https://github.com/Evelyn-Ding/summeratseas/tree/main/week-07/neurovoz_free_csvs). There's only 76 files total, whereas TORGO had 8,000+ files (so I had to .gitignore the folder)! After all the audio files have been processed, a [summary csv](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_summary.csv) is generated, containing the values of extracted features for all the audio files.
 - To perform analysis on the Neurovoz dataset, I followed a similar approach to my [TORGO analysis](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-04/torgo_analysis.ipynb), where I wrote code in Jupyter Notebook to do the following:
 ```
     1. display first few cols of csv
@@ -36,13 +33,7 @@
 
 ## Friday, 7/24
 
-- look into the parmida's [slides](https://docs.google.com/presentation/d/1oyXigbFfhRBsFg8MrF26cupQdxAif-MA/edit?rtpof=true) -> VQ analysis
-  ```
-   this is the voxprofile model
-   https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality
-   parmida should be familiar with it
-   maybe you can collaborate with her seeing what features from this model are more accurate or helpful?
-  ```
+- I looked into the Parmida's [slides](https://docs.google.com/presentation/d/1oyXigbFfhRBsFg8MrF26cupQdxAif-MA/edit?rtpof=true) on voice quality labels from the VoxProfile benchmark. My goal is identify which VQ features are the most helpful. The underlying VoxProfile model can be found at: https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality. Then, I believe I can directly prompt the ALM on the most useful VQ features, which fall into 5 categories: ```pitch, rhythm, clarity, voice texture, volume```.
 - meeting w/thai - interpretability (SHAP); ML (RF) vs DL (bert, mentalbert, llama -> encoder/decoder ?)
 - IRB trainings -> document the training process -> finish by wknd
 ---
@@ -50,7 +41,14 @@
 ## Week Summary
 
 **What I did:**
-- 
+- My goal this week was to fully explore the Parkinson's datasets! After last week's meeting, where we listened to a few audio files from each of the three datasets, we agreed that I should start with the Neurovoz dataset (Spanish).
+  - Despite having audio recordings that were pretty short in length, Neurovoz had the cleanest data and the largest sample size; the MDVR-KCL (English) dataset had noise (i.e. conversations between the moderator and speaker) and the SVD (German) dataset only had data for 1 Parkinson's patient. 
+  - When I start working with the MDVR-KCL data, I'll have to remove the noise in the data pre-processing stage, which may a bit involved. While the SVD dataset is too small for a train set, it could be a good way to verify our results on a test sample.
+- I had a couple ideas for which set of features to extract: ```(1) eGeMAPS (2) NeuroSpeech (3) MDVP (Multidimensional Voice Program)```. The reason why I want to try extracting feature sets is that I plan on comparing the accuracies of the various approaches!
+  - (1) eGeMAPS: https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_free_egemaps_features.ipynb
+  - (2) NeuroSpeech / DisVoice: https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurospeech_disvoice.md
+  - (3) MDVP: https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/neurovoz_mdvp_features.ipynb
+- After performing analysis on all three feature sets, I saw that eGeMAPS was the most successful approach. Perhaps it's because there are a larger number of features, or the specific features are better at capturing the voice quality of PD.
 - (ARNI) papers read:
 - huntington's disease
 - annotations project report
@@ -61,6 +59,6 @@
 - voice activity detection model on the english dataset ?
 
 **Plan for next week:**
-- concept bottleneck fw
-
+- Now that I've trained classifiers on three standard feature sets, the next step is to try implementing the concept bottleneck framework. This will generate features that are super interpretable, baked directly into the prompt to the ALM ([Flamingo-Audio from HuggingFace](https://huggingface.co/nvidia/audio-flamingo-next-think-hf), fine tuned on Clinical Voice Quality (CVQ) dimensions). I'll also try implementing an SSL-based model, which generates abstract, uninterpretable features that may result in a higher accuracy. This method will use a feature extraction approach built on VoxProfile (which produces 25 voice quality labels), using the [Whisper large v3 VQ model](https://huggingface.co/openai/whisper-large-v3) as the backbone.
+- IRB training
 - thai's rec'd paper [attention is all you need](https://arxiv.org/pdf/1703.01365) -> SHAP try to fix dependencies and properly implement it; look for multimodal dataset and update arni group next wk
