@@ -25,10 +25,13 @@
 ## Week Summary
 
 **What I did:**
-- 
+- wrapping up irb process and getting ready to submit by EOW
+- started exploring direction of training a concept bottleneck models (big for interpretability)
 
 **Questions:**
-- 
+- looking forward to learning more about this process - can also train models from home via vpn!
 
 **Plan for next week:**
-- 
+- notes: will be taking meetings zoom @ home
+- cont. work into the fall sem
+- hope to present poster at fall showcase in oct.! :)
