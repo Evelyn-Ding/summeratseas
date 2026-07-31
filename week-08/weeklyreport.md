@@ -24,6 +24,7 @@
   - social media datasets (text only, bc scraped from the internet) are quite separate from conversation-based datasets (which have both speech / raw audio and text / transcripts)
   - ```As shown in Table V, in the early years, pre-defined text embeddings extracted from Word2Vec [92] and LIWC features were commonly used in ADD. Recently, with the advancement of Transformer-based models like BERT [93] and RoBERTa [94] leverage bidirectional encoding and optimized training techniques, producing context-sensitive embeddings that capture sentence-level semantics. These improvements enhance robustness and applicability in NLP tasks```
   - interesting enough, it mentions LIWC features (text) but not eGeMAPS features (in the audio section)...but it does hint at it b/c it categorizes spectral, cepstral, and prosodic features
+- based on what i've read, i believe daic-woz would be the best bet for a multimodal (text+speech) dataset but it lacks social media data. also, it's overused (fig 5b: 64% of conversational data!) and thus highly oversaturated in # of studies. the current mentalbert project uses reddit mental health dataset https://zenodo.org/records/3941387 which is not cited explicitly but many many similar datasets are featured in the paper (table II)
 ---
 
 ## Week Summary
