@@ -18,7 +18,8 @@
 - Connected to speechlab server GPU access
 - Setup folder ```/proj/speech/users/esd2154```
 ## Friday, 7/31
-- Read and annotate encoder/decoder paper for mentalBERT project and also find a multimodal dataset
+- Read and annotate encoder/decoder paper for mentalBERT project -> i'll write up the report / summary of it
+- also find a multimodal dataset 
 - ARNI Meeting
 - found a paper that does exactly what we're looking for: benchmarks extracted features + performance of classifier for depression datasets across audio/speech vs text vs taken together (multi-modal) - systematically reviews 65 studies from 2008-2024
   - social media datasets (text only, bc scraped from the internet) are quite separate from conversation-based datasets (which have both speech / raw audio and text / transcripts)
