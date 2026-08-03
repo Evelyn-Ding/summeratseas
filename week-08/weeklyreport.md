@@ -14,20 +14,16 @@
 
 ## Wednesday, 7/29
 - I completed all of my IRB trainings and wrote a [document](https://docs.google.com/document/d/1M2-xi_zimDJckRlHCPVxGVST6vWSkIB_DMAjFbQKIso/edit?usp=sharing) with instructions for how to complete the trainings. This document also contains the scientific and lay abstracts for the research project.
-- We had our weekly meeting in-person! We chatted about phds, progress, summer timelines - treats :)
+- We had our weekly meeting in-person!
+
 ## Thursday, 7/30
-- For the ALM, Yu-Wen recommended that I start with on (VoxProfile)[https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality] (instead of [Flamingo-Audio](https://huggingface.co/nvidia/audio-flamingo-next-think-hf)) to generate scores for the 25 voice quality labels, resulting in a different feature set than the CVQ prompt. This model is already pre-trained, so there's no need to fine-tune it! It will help me get familiar with running models the speechlab server.
+- For the ALM, Yu-Wen recommended that I start with on [VoxProfile](https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality] (instead of [Flamingo-Audio](https://huggingface.co/nvidia/audio-flamingo-next-think-hf)) to generate scores for the 25 voice quality labels, resulting in a different feature set than the CVQ prompt. This model is already pre-trained, so there's no need to fine-tune it! It will help me get familiar with running models the speechlab server.
 - I connected to speechlab server and setup the directory ```/proj/speech/users/esd2154```. Also, I was able to check the status of speechlab's GPUs using ```watch nvidia-smi```, which was pretty cool!
 
 ## Friday, 7/31
-- Read and annotate encoder/decoder paper for mentalBERT project -> i'll write up the report / summary of it
-- also find a multimodal dataset 
-- ARNI Meeting
-- found a paper that does exactly what we're looking for: benchmarks extracted features + performance of classifier for depression datasets across audio/speech vs text vs taken together (multi-modal) - systematically reviews 65 studies from 2008-2024
-  - social media datasets (text only, bc scraped from the internet) are quite separate from conversation-based datasets (which have both speech / raw audio and text / transcripts)
-  - ```As shown in Table V, in the early years, pre-defined text embeddings extracted from Word2Vec [92] and LIWC features were commonly used in ADD. Recently, with the advancement of Transformer-based models like BERT [93] and RoBERTa [94] leverage bidirectional encoding and optimized training techniques, producing context-sensitive embeddings that capture sentence-level semantics. These improvements enhance robustness and applicability in NLP tasks```
-  - interesting enough, it mentions LIWC features (text) but not eGeMAPS features (in the audio section)...but it does hint at it b/c it categorizes spectral, cepstral, and prosodic features
-- based on what i've read, i believe daic-woz would be the best bet for a multimodal (text+speech) dataset but it lacks social media data. also, it's overused (fig 5b: 64% of conversational data!) and thus highly oversaturated in # of studies. the current mentalbert project uses reddit mental health dataset https://zenodo.org/records/3941387 which is not cited explicitly but many many similar datasets are featured in the paper (table II)
+- For the ARNI project (mentalBERT), I read and annotated the [Attention Is All You Need paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-07/Attention%20is%20all%20you%20need%20Encoders%20and%20Decoders.pdf) on encoders/decoders. I also looked into multimodal datasets that we could run side-by-side comparisons of text and speech analysis on.
+- While searching for a dataset, I came across a relevant [paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-08/Automated_Depression_Detection_From_Text_and_Audio_A_Systematic_Review.pdf) that systematically reviews 65 studies from 2008-2024, benchmarking the performance of various feature sets and classifiers for depression detection, comparing across audio speech vs text vs both taken together (multi-modal). I flagged a couple of issues:
+  - The paper explains that social media datasets contain text only, because they're scraped from the internet posts. On the other hand, conversation-based datasets contain both raw audio (speech recordings) and text (transcripts extracted from speech recordings). These categories are quite separate; the ARNI group has been working with social media data (specifically this [Reddit mental health dataset](https://zenodo.org/records/3941387), but bringing in speech analysis may require conversation at a instead. If we were to use a multimodal (text + speech) dataset, I believe DAIC-WOZ would be the best bet. However, it is conversation based instead of social media data. Also, it's been used in a large of studies, which have already covered a lot of ground in extracting features (like LIWC) and training a variety of different classifiers and models—so we may have to look for a different angle. 
 ---
 
 ## Week Summary
