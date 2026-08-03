@@ -10,18 +10,15 @@
 
 ## Tuesday, 7/28
 - I read and annotated the [concept bottleneck framework paper](https://github.com/Evelyn-Ding/summeratseas/blob/main/week-06/concept%20bottleneck%20models.pdf). My understanding is that models are given input x, which has ground truth annotations of concept c (an intermediate step to the final prediction) and target y (the final prediction). Given an input x, the models are trained to predict a concept c-hat and must directly use these concept scores to predict the target y-hat.
-- This sparked a new idea for the direction of the project: to achieve not just interpretability (“why”), but also test-time interventions where I see how changing a concept's value will affect the final prediction. In Yu-Wen's paper, the ALM was fine-tuned on a PVQD dataset (separate from the depression and dysarthria datasets they were applied to) to assess CAPE-V + GRBAS scores. The analysis on concepts was focused on the correlation the ALM output and ground truth annotations, and did not test whether adjusting certain concept values would change the downstream prediction. Since my Neurovoz dataset happens to contain GRBAS scores, I can go the extra step of changing the predicted concept values and seeing how that affects the final prediction result (i.e. I’m not just predicting the alignment between c-hat and c, but I can actually change c-hat to become c…)
-
+- This sparked a new idea for the direction of the project: to achieve not just interpretability (“why”), but also test-time interventions where I see how changing a concept's value will affect the final prediction. In Yu-Wen's paper, the ALM was fine-tuned on a PVQD dataset (separate from the depression and dysarthria datasets they were applied to) to assess CAPE-V + GRBAS scores. The analysis on concepts was focused on the correlation the ALM output and ground truth annotations, and did not test whether adjusting certain concept values would change the downstream prediction. Since my Neurovoz dataset happens to contain GRBAS scores, I can go the extra step of changing the predicted concept values and seeing how that affects the final prediction result (i.e. I’m not just predicting the alignment between c-hat and c, but I can actually change c-hat to become c).
 
 ## Wednesday, 7/29
-- Finished all IRB trainings - waiting for others to complete
-- Meeting -> focusing on voxprofile would definitely change feature set AND ALM
-  - use voxprofile first to generate scores for the 25 VQ labels instead of fine-tuning ALM (FlamingoAudio from Hugging Face)
-  - this will help me get familiar with running on speechlab server
+- I completed all of my IRB trainings and wrote a [document](https://docs.google.com/document/d/1M2-xi_zimDJckRlHCPVxGVST6vWSkIB_DMAjFbQKIso/edit?usp=sharing) with instructions for how to complete the trainings. This document also contains the scientific and lay abstracts for the research project.
+- We had our weekly meeting in-person! We chatted about phds, progress, summer timelines - treats :)
 ## Thursday, 7/30
-- Finished IRB abstracts - waiting for review
-- Connected to speechlab server GPU access
-- Setup folder ```/proj/speech/users/esd2154```
+- For the ALM, Yu-Wen recommended that I start with on (VoxProfile)[https://huggingface.co/tiantiaf/whisper-large-v3-voice-quality] (instead of [Flamingo-Audio](https://huggingface.co/nvidia/audio-flamingo-next-think-hf)) to generate scores for the 25 voice quality labels, resulting in a different feature set than the CVQ prompt. This model is already pre-trained, so there's no need to fine-tune it! It will help me get familiar with running models the speechlab server.
+- I connected to speechlab server and setup the directory ```/proj/speech/users/esd2154```. Also, I was able to check the status of speechlab's GPUs using ```watch nvidia-smi```, which was pretty cool!
+
 ## Friday, 7/31
 - Read and annotate encoder/decoder paper for mentalBERT project -> i'll write up the report / summary of it
 - also find a multimodal dataset 
