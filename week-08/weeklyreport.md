@@ -31,13 +31,15 @@
 ## Week Summary
 
 **What I did:**
-- wrapping up irb process and getting ready to submit by EOW
-- started exploring direction of training a concept bottleneck models (big for interpretability)
+- I finalized the IRB application! After completing the training process and writing the abstracts, I sent out emails for everyone on the Personnel list to approve the protocol.
+- I explored the big idea of training a concept bottleneck model to achieve interpretability. This involved setting up a directory in the speechlab server for me to train models using the lab's GPU machines.
 
 **Questions:**
-- looking forward to learning more about this process - can also train models from home via vpn!
+- I ran into some issues when trying to create a Python virtual environment inside the speechserver. How do I resolve the issues from trying to set up conda and venv?
+- To continue accessing the speechlab GPU machines, how should I setup a VPN?
 
 **Plan for next week:**
-- notes: will be taking meetings zoom @ home
-- cont. work into the fall sem
-- hope to present poster at fall showcase in oct.! :)
+- Starting next week, I will be taking the weekly meetings from Zoom! I'll keep working on the project from home for the rest of the summer, and I'm really excited to continue the project into the school year too.
+- I hope to present poster at the Columbia undergraduate research symposium in October. Looking forward to writing up a final report and making a poster to summarize my findings :)
+
+Overall reflections: It's been a great summer of research! I learned a lot about the research process, from IRB proposals to audio language models. At the beginning of the summer, I wasn't familiar with how I should approach the process of identifying vocal biomarkers for health disorders. I read many papers to understand the existing work done by researchers to extract features and train detection models, and I learned about techniques like post hoc interpretability and concept bottleneck frameworks. Now, I feel like I have a much more solid understanding of the speech processing field (and in particular, its application to detection of health disorders).
